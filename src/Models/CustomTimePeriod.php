@@ -2,12 +2,12 @@
 
 namespace Joinbiz\Data\Models\Common;
 
+use Illuminate\Database\Eloquent\Model;
 use Joinbiz\Data\Models\Accounting\Budget;
 use Joinbiz\Data\Models\Accounting\GlAccountHistory;
 use Joinbiz\Data\Models\Marketing\SalesForecast;
 use Joinbiz\Data\Models\Marketing\SalesForecastHistory;
 use Joinbiz\Data\Models\Party\Party;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property string $custom_time_period_id
@@ -34,6 +34,7 @@ use Illuminate\Database\Eloquent\Model;
 class CustomTimePeriod extends Model
 {
     const CREATED_AT = 'created_stamp';
+
     const UPDATED_AT = 'last_updated_stamp';
 
     /**

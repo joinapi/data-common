@@ -2,6 +2,7 @@
 
 namespace Joinbiz\Data\Models\Common;
 
+use Illuminate\Database\Eloquent\Model;
 use Joinbiz\Data\Models\Content\Content;
 use Joinbiz\Data\Models\Content\ContentAssoc;
 use Joinbiz\Data\Models\Content\ContentMetaData;
@@ -9,7 +10,6 @@ use Joinbiz\Data\Models\Content\DataResource;
 use Joinbiz\Data\Models\Content\DataResourceMetaData;
 use Joinbiz\Data\Models\Party\Party;
 use Joinbiz\Data\Models\Party\PartyDataSource;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property string $data_source_id
@@ -32,6 +32,7 @@ use Illuminate\Database\Eloquent\Model;
 class DataSource extends Model
 {
     const CREATED_AT = 'created_stamp';
+
     const UPDATED_AT = 'last_updated_stamp';
 
     /**

@@ -2,6 +2,7 @@
 
 namespace Joinbiz\Data\Models\Common;
 
+use Illuminate\Database\Eloquent\Model;
 use Joinbiz\Data\Models\Accounting\FixedAssetGeoPoint;
 use Joinbiz\Data\Models\Party\PartyGeoPoint;
 use Joinbiz\Data\Models\Party\PostalAddress;
@@ -9,7 +10,6 @@ use Joinbiz\Data\Models\Product\ContainerGeoPoint;
 use Joinbiz\Data\Models\Product\Facility;
 use Joinbiz\Data\Models\Product\FacilityLocation;
 use Joinbiz\Data\Models\Product\FacilityLocationGeoPoint;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property string $geo_point_id
@@ -39,6 +39,7 @@ use Illuminate\Database\Eloquent\Model;
 class GeoPoint extends Model
 {
     const CREATED_AT = 'created_stamp';
+
     const UPDATED_AT = 'last_updated_stamp';
 
     /**

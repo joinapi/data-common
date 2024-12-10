@@ -2,6 +2,7 @@
 
 namespace Joinbiz\Data\Models\Common;
 
+use Illuminate\Database\Eloquent\Model;
 use Joinbiz\Data\Models\Accounting\FixedAssetDepMethod;
 use Joinbiz\Data\Models\Accounting\PartyAcctgPreference;
 use Joinbiz\Data\Models\Content\Content;
@@ -13,7 +14,6 @@ use Joinbiz\Data\Models\Product\ProductPromoCond;
 use Joinbiz\Data\Models\Product\ProductStorePaymentSetting;
 use Joinbiz\Data\Models\Product\ProductStoreShipmentMeth;
 use Joinbiz\Data\Models\Workeffort\WorkEffort;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property string $custom_method_id
@@ -44,6 +44,7 @@ use Illuminate\Database\Eloquent\Model;
 class CustomMethod extends Model
 {
     const CREATED_AT = 'created_stamp';
+
     const UPDATED_AT = 'last_updated_stamp';
 
     /**

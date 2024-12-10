@@ -2,6 +2,7 @@
 
 namespace Joinbiz\Data\Models\Common;
 
+use Illuminate\Database\Eloquent\Model;
 use Joinbiz\Data\Models\Accounting\InvoiceItem;
 use Joinbiz\Data\Models\Accounting\PaymentApplication;
 use Joinbiz\Data\Models\Accounting\TaxAuthority;
@@ -20,7 +21,6 @@ use Joinbiz\Data\Models\Product\ProductPrice;
 use Joinbiz\Data\Models\Product\ReorderGuideline;
 use Joinbiz\Data\Models\Shipment\ShipmentCostEstimate;
 use Joinbiz\Data\Models\Shipment\ShipmentTimeEstimate;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property string $geo_id
@@ -70,6 +70,7 @@ use Illuminate\Database\Eloquent\Model;
 class Geo extends Model
 {
     const CREATED_AT = 'created_stamp';
+
     const UPDATED_AT = 'last_updated_stamp';
 
     /**

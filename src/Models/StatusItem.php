@@ -2,6 +2,7 @@
 
 namespace Joinbiz\Data\Models\Common;
 
+use Illuminate\Database\Eloquent\Model;
 use Joinbiz\Data\Models\Accounting\AcctgTrans;
 use Joinbiz\Data\Models\Accounting\AcctgTransEntry;
 use Joinbiz\Data\Models\Accounting\BudgetStatus;
@@ -65,7 +66,6 @@ use Joinbiz\Data\Models\Workeffort\WorkEffortInventoryAssign;
 use Joinbiz\Data\Models\Workeffort\WorkEffortPartyAssignment;
 use Joinbiz\Data\Models\Workeffort\WorkEffortReview;
 use Joinbiz\Data\Models\Workeffort\WorkEffortStatus;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property string $status_id
@@ -161,6 +161,7 @@ use Illuminate\Database\Eloquent\Model;
 class StatusItem extends Model
 {
     const CREATED_AT = 'created_stamp';
+
     const UPDATED_AT = 'last_updated_stamp';
 
     /**

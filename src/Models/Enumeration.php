@@ -2,6 +2,7 @@
 
 namespace Joinbiz\Data\Models\Common;
 
+use Illuminate\Database\Eloquent\Model;
 use Joinbiz\Data\Models\Accounting\FinAccountTrans;
 use Joinbiz\Data\Models\Accounting\FinAccountType;
 use Joinbiz\Data\Models\Accounting\FixedAsset;
@@ -42,7 +43,6 @@ use Joinbiz\Data\Models\Security\UserLoginSecurityQuestion;
 use Joinbiz\Data\Models\Service\JobManagerLock;
 use Joinbiz\Data\Models\Workeffort\WorkEffort;
 use Joinbiz\Data\Models\Workeffort\WorkEffortPartyAssignment;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property string $enum_id
@@ -122,6 +122,7 @@ use Illuminate\Database\Eloquent\Model;
 class Enumeration extends Model
 {
     const CREATED_AT = 'created_stamp';
+
     const UPDATED_AT = 'last_updated_stamp';
 
     /**
