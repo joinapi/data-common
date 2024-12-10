@@ -2,9 +2,9 @@
 
 namespace Joinbiz\Data\Models\Common;
 
+use Joinbiz\Data\Models\Common\Commands\JoinbizDataCommonCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Joinbiz\Data\Models\Common\Commands\JoinbizDataCommonCommand;
 
 class JoinbizDataCommonServiceProvider extends PackageServiceProvider
 {

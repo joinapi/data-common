@@ -3,8 +3,8 @@
 namespace Joinbiz\Data\Models\Common\JoinbizDataCommon\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use Joinbiz\Data\Models\Common\JoinbizDataCommon\JoinbizDataCommonServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
