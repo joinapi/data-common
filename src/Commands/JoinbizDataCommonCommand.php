@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Joinbiz\Data\Models\Common\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class JoinbizDataCommonCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'data-common';
 
     public $description = 'My command';
 
