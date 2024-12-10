@@ -52,7 +52,7 @@ php artisan vendor:publish --tag="data-common-views"
 ## Usage
 
 ```php
-$joinbizDataCommon = new Joinbiz\Data\Models\Common\JoinbizDataCommon();
+$joinbizDataCommon = new Joinbiz\Data\Models\Common\DataCommon();
 echo $joinbizDataCommon->echoPhrase('Hello, Joinbiz\Data\Models\Common!');
 ```
 

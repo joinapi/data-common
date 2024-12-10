@@ -4,11 +4,11 @@ namespace Joinbiz\Data\Models\Common\Commands;
 
 use Illuminate\Console\Command;
 
-class JoinbizDataCommonCommand extends Command
+class DataCommonCommand extends Command
 {
     public $signature = 'data-common';
 
-    public $description = 'My command';
+    public $description = 'DataCommonCommand command';
 
     public function handle(): int
     {

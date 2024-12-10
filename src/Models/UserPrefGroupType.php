@@ -5,19 +5,17 @@ namespace Joinbiz\Data\Models\Common;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property string $geo_assoc_type_id
+ * @property string $user_pref_group_type_id
  * @property string $description
  * @property string $last_updated_stamp
  * @property string $last_updated_tx_stamp
  * @property string $created_stamp
  * @property string $created_tx_stamp
- * @property CountryAddressFormat[] $countryAddressFormats
- * @property GeoAssoc[] $geoAssocs
+ * @property UserPreference[] $userPreferences
  */
-class GeoAssocType extends Model
+class UserPrefGroupType extends Model
 {
     const CREATED_AT = 'created_stamp';
-
     const UPDATED_AT = 'last_updated_stamp';
 
     /**
@@ -25,14 +23,14 @@ class GeoAssocType extends Model
      *
      * @var string
      */
-    protected $table = 'geo_assoc_type';
+    protected $table = 'user_pref_group_type';
 
     /**
      * The primary key for the model.
      *
      * @var string
      */
-    protected $primaryKey = 'geo_assoc_type_id';
+    protected $primaryKey = 'user_pref_group_type_id';
 
     /**
      * The "type" of the auto-incrementing ID.
@@ -56,16 +54,8 @@ class GeoAssocType extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function countryAddressFormats()
+    public function userPreferences()
     {
-        return $this->hasMany('Joinbiz\Data\Models\Common\CountryAddressFormat', 'geo_assoc_type_id', 'geo_assoc_type_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function geoAssocs()
-    {
-        return $this->hasMany('Joinbiz\Data\Models\Common\GeoAssoc', 'geo_assoc_type_id', 'geo_assoc_type_id');
+        return $this->hasMany('Joinbiz\Data\Models\Common\UserPreference', 'user_pref_group_type_id', 'user_pref_group_type_id');
     }
 }

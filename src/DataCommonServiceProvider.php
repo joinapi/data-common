@@ -2,11 +2,11 @@
 
 namespace Joinbiz\Data\Models\Common;
 
-use Joinbiz\Data\Models\Common\Commands\JoinbizDataCommonCommand;
+use Joinbiz\Data\Models\Common\Commands\DataCommonCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class JoinbizDataCommonServiceProvider extends PackageServiceProvider
+class DataCommonServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -18,8 +18,6 @@ class JoinbizDataCommonServiceProvider extends PackageServiceProvider
         $package
             ->name('data-common')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_data_common_table')
-            ->hasCommand(JoinbizDataCommonCommand::class);
+            ->hasCommand(DataCommonCommand::class);
     }
 }

@@ -17,12 +17,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $last_updated_tx_stamp
  * @property string $created_stamp
  * @property string $created_tx_stamp
+ * @property Geo $geo
  * @property GeoAssocType $geoAssocType
  */
 class CountryAddressFormat extends Model
 {
     const CREATED_AT = 'created_stamp';
-
     const UPDATED_AT = 'last_updated_stamp';
 
     /**
@@ -57,6 +57,14 @@ class CountryAddressFormat extends Model
      * @var array
      */
     protected $fillable = ['geo_assoc_type_id', 'require_state_province_id', 'require_postal_code', 'postal_code_regex', 'has_postal_code_ext', 'require_postal_code_ext', 'address_format', 'last_updated_stamp', 'last_updated_tx_stamp', 'created_stamp', 'created_tx_stamp'];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function geo()
+    {
+        return $this->belongsTo('Joinbiz\Data\Models\Common\Geo', 'geo_id', 'geo_id');
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

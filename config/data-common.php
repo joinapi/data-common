@@ -1,6 +1,6 @@
 <?php
 
-// config for Joinbiz\Data\Models\Common/JoinbizDataCommon
+// config for Joinbiz\Data\Models\Common/DataCommon
 return [
 
 ];

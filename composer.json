@@ -35,7 +35,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Joinbiz\\Data\\Models\\Common\\": "src/",
+            "Joinbiz\\Data\\Models\\Common": "src/Models",
             "Joinbiz\\Data\\Models\\Common\\Database\\Factories\\": "database/factories/"
         }
     },
@@ -62,10 +62,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Joinbiz\\Data\\Models\\Common\\JoinbizDataCommonServiceProvider"
+                "DataCommonServiceProvider"
             ],
             "aliases": {
-                "JoinbizDataCommon": "Joinbiz\\Data\\Models\\Common\\Facades\\JoinbizDataCommon"
+                "DataCommon": "DataCommon"
             }
         }
     },

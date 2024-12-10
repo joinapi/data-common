@@ -2,4 +2,4 @@
 
 namespace Joinbiz\Data\Models\Common;
 
-class JoinbizDataCommon {}
+class DataCommon {}
