@@ -3,8 +3,6 @@
 namespace Joinbiz\Data\Models\Common;
 
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD:src/Joinbiz/Data/Models/Common/Enumeration.php
-=======
 use Joinbiz\Data\Models\Accounting\FinAccountTrans;
 use Joinbiz\Data\Models\Accounting\FinAccountType;
 use Joinbiz\Data\Models\Accounting\FixedAsset;
@@ -45,7 +43,7 @@ use Joinbiz\Data\Models\Security\UserLoginSecurityQuestion;
 use Joinbiz\Data\Models\Service\JobManagerLock;
 use Joinbiz\Data\Models\Workeffort\WorkEffort;
 use Joinbiz\Data\Models\Workeffort\WorkEffortPartyAssignment;
->>>>>>> 3b897f5a09638083e4d8b361917ff12b66bc372f:src/Models/Enumeration.php
+
 
 /**
  * @property string $enum_id
@@ -130,28 +128,28 @@ class Enumeration extends Model
 
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'enumeration';
 
     /**
      * The primary key for the model.
-     * 
+     *
      * @var string
      */
     protected $primaryKey = 'enum_id';
 
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'string';
 
     /**
      * Indicates if the IDs are auto-incrementing.
-     * 
+     *
      * @var bool
      */
     public $incrementing = false;
