@@ -3,6 +3,11 @@
 namespace Joinbiz\Data\Models\Common;
 
 use Illuminate\Database\Eloquent\Model;
+<<<<<<< HEAD:src/Joinbiz/Data/Models/Common/PeriodType.php
+=======
+use Joinbiz\Data\Models\Accounting\RateAmount;
+use Joinbiz\Data\Models\Humanres\PayHistory;
+>>>>>>> 3b897f5a09638083e4d8b361917ff12b66bc372f:src/Models/PeriodType.php
 
 /**
  * @property string $period_type_id
@@ -21,6 +26,7 @@ use Illuminate\Database\Eloquent\Model;
 class PeriodType extends Model
 {
     const CREATED_AT = 'created_stamp';
+
     const UPDATED_AT = 'last_updated_stamp';
 
     /**

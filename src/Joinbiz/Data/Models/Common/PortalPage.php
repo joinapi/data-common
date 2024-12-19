@@ -3,6 +3,11 @@
 namespace Joinbiz\Data\Models\Common;
 
 use Illuminate\Database\Eloquent\Model;
+<<<<<<< HEAD:src/Joinbiz/Data/Models/Common/PortalPage.php
+=======
+use Joinbiz\Data\Models\Content\Content;
+use Joinbiz\Data\Models\Security\SecurityGroup;
+>>>>>>> 3b897f5a09638083e4d8b361917ff12b66bc372f:src/Models/PortalPage.php
 
 /**
  * @property string $portal_page_id
@@ -27,6 +32,7 @@ use Illuminate\Database\Eloquent\Model;
 class PortalPage extends Model
 {
     const CREATED_AT = 'created_stamp';
+
     const UPDATED_AT = 'last_updated_stamp';
 
     /**

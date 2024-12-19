@@ -3,6 +3,49 @@
 namespace Joinbiz\Data\Models\Common;
 
 use Illuminate\Database\Eloquent\Model;
+<<<<<<< HEAD:src/Joinbiz/Data/Models/Common/Enumeration.php
+=======
+use Joinbiz\Data\Models\Accounting\FinAccountTrans;
+use Joinbiz\Data\Models\Accounting\FinAccountType;
+use Joinbiz\Data\Models\Accounting\FixedAsset;
+use Joinbiz\Data\Models\Accounting\GiftCardFulfillment;
+use Joinbiz\Data\Models\Accounting\PartyAcctgPreference;
+use Joinbiz\Data\Models\Accounting\PaymentGatewayResponse;
+use Joinbiz\Data\Models\Content\Content;
+use Joinbiz\Data\Models\Content\ContentPurposeOperation;
+use Joinbiz\Data\Models\Humanres\JobInterview;
+use Joinbiz\Data\Models\Humanres\JobRequisition;
+use Joinbiz\Data\Models\Marketing\SalesOpportunity;
+use Joinbiz\Data\Models\Marketing\TrackingCodeVisit;
+use Joinbiz\Data\Models\Order\CustRequest;
+use Joinbiz\Data\Models\Order\OrderHeader;
+use Joinbiz\Data\Models\Order\OrderItemChange;
+use Joinbiz\Data\Models\Order\OrderNotification;
+use Joinbiz\Data\Models\Order\Quote;
+use Joinbiz\Data\Models\Party\CommunicationEvent;
+use Joinbiz\Data\Models\Party\Person;
+use Joinbiz\Data\Models\Product\FacilityLocation;
+use Joinbiz\Data\Models\Product\InventoryItemDetail;
+use Joinbiz\Data\Models\Product\Product;
+use Joinbiz\Data\Models\Product\ProductCategoryLink;
+use Joinbiz\Data\Models\Product\ProductFacility;
+use Joinbiz\Data\Models\Product\ProductGeo;
+use Joinbiz\Data\Models\Product\ProductPriceCond;
+use Joinbiz\Data\Models\Product\ProductPromoAction;
+use Joinbiz\Data\Models\Product\ProductPromoCategory;
+use Joinbiz\Data\Models\Product\ProductPromoCond;
+use Joinbiz\Data\Models\Product\ProductPromoProduct;
+use Joinbiz\Data\Models\Product\ProductStore;
+use Joinbiz\Data\Models\Product\ProductStoreEmailSetting;
+use Joinbiz\Data\Models\Product\ProductStoreFinActSetting;
+use Joinbiz\Data\Models\Product\ProductStoreKeywordOvrd;
+use Joinbiz\Data\Models\Product\ProductStorePaymentSetting;
+use Joinbiz\Data\Models\Product\ProductStoreVendorPayment;
+use Joinbiz\Data\Models\Security\UserLoginSecurityQuestion;
+use Joinbiz\Data\Models\Service\JobManagerLock;
+use Joinbiz\Data\Models\Workeffort\WorkEffort;
+use Joinbiz\Data\Models\Workeffort\WorkEffortPartyAssignment;
+>>>>>>> 3b897f5a09638083e4d8b361917ff12b66bc372f:src/Models/Enumeration.php
 
 /**
  * @property string $enum_id
@@ -82,6 +125,7 @@ use Illuminate\Database\Eloquent\Model;
 class Enumeration extends Model
 {
     const CREATED_AT = 'created_stamp';
+
     const UPDATED_AT = 'last_updated_stamp';
 
     /**

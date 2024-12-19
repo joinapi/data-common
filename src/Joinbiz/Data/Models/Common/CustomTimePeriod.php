@@ -3,6 +3,14 @@
 namespace Joinbiz\Data\Models\Common;
 
 use Illuminate\Database\Eloquent\Model;
+<<<<<<< HEAD:src/Joinbiz/Data/Models/Common/CustomTimePeriod.php
+=======
+use Joinbiz\Data\Models\Accounting\Budget;
+use Joinbiz\Data\Models\Accounting\GlAccountHistory;
+use Joinbiz\Data\Models\Marketing\SalesForecast;
+use Joinbiz\Data\Models\Marketing\SalesForecastHistory;
+use Joinbiz\Data\Models\Party\Party;
+>>>>>>> 3b897f5a09638083e4d8b361917ff12b66bc372f:src/Models/CustomTimePeriod.php
 
 /**
  * @property string $custom_time_period_id
@@ -29,6 +37,7 @@ use Illuminate\Database\Eloquent\Model;
 class CustomTimePeriod extends Model
 {
     const CREATED_AT = 'created_stamp';
+
     const UPDATED_AT = 'last_updated_stamp';
 
     /**

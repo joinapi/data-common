@@ -3,6 +3,7 @@
 namespace Joinbiz\Data\Models\Common;
 
 use Illuminate\Database\Eloquent\Model;
+use Joinbiz\Data\Models\Product\Product;
 
 /**
  * @property string $uom_type_id
@@ -20,6 +21,7 @@ use Illuminate\Database\Eloquent\Model;
 class UomType extends Model
 {
     const CREATED_AT = 'created_stamp';
+
     const UPDATED_AT = 'last_updated_stamp';
 
     /**
