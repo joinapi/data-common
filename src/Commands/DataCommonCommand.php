@@ -1,6 +1,6 @@
 <?php
 
-namespace Joinbiz\Data\Models\Common\Commands;
+namespace Commands;
 
 use Illuminate\Console\Command;
 

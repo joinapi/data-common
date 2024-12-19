@@ -1,8 +1,8 @@
 <?php
 
-namespace Joinbiz\Data\Models\Common;
+namespace Joinbiz\Data;
 
-use Joinbiz\Data\Models\Common\Commands\DataCommonCommand;
+use Commands\DataCommonCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
