@@ -3,27 +3,6 @@
 namespace Joinbiz\Data\Models\Common;
 
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD:src/Joinbiz/Data/Models/Common/Geo.php
-=======
-use Joinbiz\Data\Models\Accounting\InvoiceItem;
-use Joinbiz\Data\Models\Accounting\PaymentApplication;
-use Joinbiz\Data\Models\Accounting\TaxAuthority;
-use Joinbiz\Data\Models\Content\SurveyQuestion;
-use Joinbiz\Data\Models\Marketing\SegmentGroupGeo;
-use Joinbiz\Data\Models\Order\OrderAdjustment;
-use Joinbiz\Data\Models\Order\QuoteAdjustment;
-use Joinbiz\Data\Models\Order\ReturnAdjustment;
-use Joinbiz\Data\Models\Party\AgreementGeographicalApplic;
-use Joinbiz\Data\Models\Party\PostalAddress;
-use Joinbiz\Data\Models\Party\PostalAddressBoundary;
-use Joinbiz\Data\Models\Product\CostComponent;
-use Joinbiz\Data\Models\Product\Product;
-use Joinbiz\Data\Models\Product\ProductGeo;
-use Joinbiz\Data\Models\Product\ProductPrice;
-use Joinbiz\Data\Models\Product\ReorderGuideline;
-use Joinbiz\Data\Models\Shipment\ShipmentCostEstimate;
-use Joinbiz\Data\Models\Shipment\ShipmentTimeEstimate;
->>>>>>> 3b897f5a09638083e4d8b361917ff12b66bc372f:src/Models/Geo.php
 
 /**
  * @property string $geo_id
@@ -78,28 +57,28 @@ class Geo extends Model
 
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'geo';
 
     /**
      * The primary key for the model.
-     * 
+     *
      * @var string
      */
     protected $primaryKey = 'geo_id';
 
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'string';
 
     /**
      * Indicates if the IDs are auto-incrementing.
-     * 
+     *
      * @var bool
      */
     public $incrementing = false;

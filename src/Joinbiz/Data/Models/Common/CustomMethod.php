@@ -3,20 +3,7 @@
 namespace Joinbiz\Data\Models\Common;
 
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD:src/Joinbiz/Data/Models/Common/CustomMethod.php
-=======
-use Joinbiz\Data\Models\Accounting\FixedAssetDepMethod;
-use Joinbiz\Data\Models\Accounting\PartyAcctgPreference;
-use Joinbiz\Data\Models\Content\Content;
-use Joinbiz\Data\Models\Product\CostComponentCalc;
-use Joinbiz\Data\Models\Product\ProductAssoc;
-use Joinbiz\Data\Models\Product\ProductPrice;
-use Joinbiz\Data\Models\Product\ProductPromoAction;
-use Joinbiz\Data\Models\Product\ProductPromoCond;
-use Joinbiz\Data\Models\Product\ProductStorePaymentSetting;
-use Joinbiz\Data\Models\Product\ProductStoreShipmentMeth;
-use Joinbiz\Data\Models\Workeffort\WorkEffort;
->>>>>>> 3b897f5a09638083e4d8b361917ff12b66bc372f:src/Models/CustomMethod.php
+
 
 /**
  * @property string $custom_method_id
@@ -52,28 +39,28 @@ class CustomMethod extends Model
 
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'custom_method';
 
     /**
      * The primary key for the model.
-     * 
+     *
      * @var string
      */
     protected $primaryKey = 'custom_method_id';
 
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'string';
 
     /**
      * Indicates if the IDs are auto-incrementing.
-     * 
+     *
      * @var bool
      */
     public $incrementing = false;

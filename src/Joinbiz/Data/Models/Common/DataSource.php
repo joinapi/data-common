@@ -3,16 +3,7 @@
 namespace Joinbiz\Data\Models\Common;
 
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD:src/Joinbiz/Data/Models/Common/DataSource.php
-=======
-use Joinbiz\Data\Models\Content\Content;
-use Joinbiz\Data\Models\Content\ContentAssoc;
-use Joinbiz\Data\Models\Content\ContentMetaData;
-use Joinbiz\Data\Models\Content\DataResource;
-use Joinbiz\Data\Models\Content\DataResourceMetaData;
-use Joinbiz\Data\Models\Party\Party;
-use Joinbiz\Data\Models\Party\PartyDataSource;
->>>>>>> 3b897f5a09638083e4d8b361917ff12b66bc372f:src/Models/DataSource.php
+
 
 /**
  * @property string $data_source_id
@@ -40,28 +31,28 @@ class DataSource extends Model
 
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'data_source';
 
     /**
      * The primary key for the model.
-     * 
+     *
      * @var string
      */
     protected $primaryKey = 'data_source_id';
 
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'string';
 
     /**
      * Indicates if the IDs are auto-incrementing.
-     * 
+     *
      * @var bool
      */
     public $incrementing = false;

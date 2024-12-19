@@ -3,16 +3,7 @@
 namespace Joinbiz\Data\Models\Common;
 
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD:src/Joinbiz/Data/Models/Common/GeoPoint.php
-=======
-use Joinbiz\Data\Models\Accounting\FixedAssetGeoPoint;
-use Joinbiz\Data\Models\Party\PartyGeoPoint;
-use Joinbiz\Data\Models\Party\PostalAddress;
-use Joinbiz\Data\Models\Product\ContainerGeoPoint;
-use Joinbiz\Data\Models\Product\Facility;
-use Joinbiz\Data\Models\Product\FacilityLocation;
-use Joinbiz\Data\Models\Product\FacilityLocationGeoPoint;
->>>>>>> 3b897f5a09638083e4d8b361917ff12b66bc372f:src/Models/GeoPoint.php
+
 
 /**
  * @property string $geo_point_id
@@ -47,28 +38,28 @@ class GeoPoint extends Model
 
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'geo_point';
 
     /**
      * The primary key for the model.
-     * 
+     *
      * @var string
      */
     protected $primaryKey = 'geo_point_id';
 
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'string';
 
     /**
      * Indicates if the IDs are auto-incrementing.
-     * 
+     *
      * @var bool
      */
     public $incrementing = false;

@@ -3,72 +3,6 @@
 namespace Joinbiz\Data\Models\Common;
 
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD:src/Joinbiz/Data/Models/Common/StatusItem.php
-=======
-use Joinbiz\Data\Models\Accounting\AcctgTrans;
-use Joinbiz\Data\Models\Accounting\AcctgTransEntry;
-use Joinbiz\Data\Models\Accounting\BudgetStatus;
-use Joinbiz\Data\Models\Accounting\FinAccountStatus;
-use Joinbiz\Data\Models\Accounting\FinAccountTrans;
-use Joinbiz\Data\Models\Accounting\FixedAssetMaint;
-use Joinbiz\Data\Models\Accounting\GlReconciliation;
-use Joinbiz\Data\Models\Accounting\Invoice;
-use Joinbiz\Data\Models\Accounting\InvoiceStatus;
-use Joinbiz\Data\Models\Accounting\PartyFixedAssetAssignment;
-use Joinbiz\Data\Models\Accounting\Payment;
-use Joinbiz\Data\Models\Content\Content;
-use Joinbiz\Data\Models\Content\ContentApproval;
-use Joinbiz\Data\Models\Content\ContentPurposeOperation;
-use Joinbiz\Data\Models\Content\DataResource;
-use Joinbiz\Data\Models\Content\SurveyResponse;
-use Joinbiz\Data\Models\Humanres\EmplLeave;
-use Joinbiz\Data\Models\Humanres\EmplPosition;
-use Joinbiz\Data\Models\Humanres\PartyQual;
-use Joinbiz\Data\Models\Marketing\ContactListCommStatus;
-use Joinbiz\Data\Models\Marketing\ContactListParty;
-use Joinbiz\Data\Models\Marketing\MarketingCampaign;
-use Joinbiz\Data\Models\Order\CustRequest;
-use Joinbiz\Data\Models\Order\CustRequestItem;
-use Joinbiz\Data\Models\Order\CustRequestStatus;
-use Joinbiz\Data\Models\Order\OrderDeliverySchedule;
-use Joinbiz\Data\Models\Order\OrderHeader;
-use Joinbiz\Data\Models\Order\OrderItem;
-use Joinbiz\Data\Models\Order\OrderPaymentPreference;
-use Joinbiz\Data\Models\Order\OrderStatus;
-use Joinbiz\Data\Models\Order\Quote;
-use Joinbiz\Data\Models\Order\Requirement;
-use Joinbiz\Data\Models\Order\RequirementStatus;
-use Joinbiz\Data\Models\Order\ReturnHeader;
-use Joinbiz\Data\Models\Order\ReturnItem;
-use Joinbiz\Data\Models\Order\ReturnStatus;
-use Joinbiz\Data\Models\Party\CommunicationEvent;
-use Joinbiz\Data\Models\Party\CommunicationEventRole;
-use Joinbiz\Data\Models\Party\Party;
-use Joinbiz\Data\Models\Party\PartyInvitation;
-use Joinbiz\Data\Models\Party\PartyRelationship;
-use Joinbiz\Data\Models\Party\PartyStatus;
-use Joinbiz\Data\Models\Product\InventoryItem;
-use Joinbiz\Data\Models\Product\InventoryItemStatus;
-use Joinbiz\Data\Models\Product\InventoryTransfer;
-use Joinbiz\Data\Models\Product\ProductGroupOrder;
-use Joinbiz\Data\Models\Product\ProductReview;
-use Joinbiz\Data\Models\Product\ProductStore;
-use Joinbiz\Data\Models\Service\JobSandbox;
-use Joinbiz\Data\Models\Shipment\Picklist;
-use Joinbiz\Data\Models\Shipment\PicklistItem;
-use Joinbiz\Data\Models\Shipment\PicklistStatusHistory;
-use Joinbiz\Data\Models\Shipment\Shipment;
-use Joinbiz\Data\Models\Shipment\ShipmentRouteSegment;
-use Joinbiz\Data\Models\Shipment\ShipmentStatus;
-use Joinbiz\Data\Models\Workeffort\Timesheet;
-use Joinbiz\Data\Models\Workeffort\WorkEffort;
-use Joinbiz\Data\Models\Workeffort\WorkEffortFixedAssetAssign;
-use Joinbiz\Data\Models\Workeffort\WorkEffortGoodStandard;
-use Joinbiz\Data\Models\Workeffort\WorkEffortInventoryAssign;
-use Joinbiz\Data\Models\Workeffort\WorkEffortPartyAssignment;
-use Joinbiz\Data\Models\Workeffort\WorkEffortReview;
-use Joinbiz\Data\Models\Workeffort\WorkEffortStatus;
->>>>>>> 3b897f5a09638083e4d8b361917ff12b66bc372f:src/Models/StatusItem.php
 
 /**
  * @property string $status_id
@@ -170,28 +104,28 @@ class StatusItem extends Model
 
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'status_item';
 
     /**
      * The primary key for the model.
-     * 
+     *
      * @var string
      */
     protected $primaryKey = 'status_id';
 
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'string';
 
     /**
      * Indicates if the IDs are auto-incrementing.
-     * 
+     *
      * @var bool
      */
     public $incrementing = false;

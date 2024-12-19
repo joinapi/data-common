@@ -3,14 +3,7 @@
 namespace Joinbiz\Data\Models\Common;
 
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD:src/Joinbiz/Data/Models/Common/CustomTimePeriod.php
-=======
-use Joinbiz\Data\Models\Accounting\Budget;
-use Joinbiz\Data\Models\Accounting\GlAccountHistory;
-use Joinbiz\Data\Models\Marketing\SalesForecast;
-use Joinbiz\Data\Models\Marketing\SalesForecastHistory;
-use Joinbiz\Data\Models\Party\Party;
->>>>>>> 3b897f5a09638083e4d8b361917ff12b66bc372f:src/Models/CustomTimePeriod.php
+
 
 /**
  * @property string $custom_time_period_id
@@ -42,28 +35,28 @@ class CustomTimePeriod extends Model
 
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'custom_time_period';
 
     /**
      * The primary key for the model.
-     * 
+     *
      * @var string
      */
     protected $primaryKey = 'custom_time_period_id';
 
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'string';
 
     /**
      * Indicates if the IDs are auto-incrementing.
-     * 
+     *
      * @var bool
      */
     public $incrementing = false;
