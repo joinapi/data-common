@@ -18,7 +18,7 @@
     "require": {
         "php": "^8.2",
         "spatie/laravel-package-tools": "^1.16",
-        "illuminate/contracts": "^10.0||^11.0"
+        "illuminate/contracts": "^11.0"
     },
     "require-dev": {
         "laravel/pint": "^1.14",
@@ -35,13 +35,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Joinbiz\\Data\\Models\\Common": "src/Models",
-            "Joinbiz\\Data\\Models\\Common\\Database\\Factories\\": "database/factories/"
+            "Joinbiz\\": "src/Joinbiz/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-
+            "Joinbiz\\": "src/Joinbiz/"
         }
     },
     "scripts": {
