@@ -3,6 +3,7 @@
 namespace Joinbiz\Data\Models\Common\JoinbizDataCommon\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Joinbiz\Data\Models\Common\DataCommonServiceProvider;
 use Joinbiz\Data\Models\Common\JoinbizDataCommon\JoinbizDataCommonServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -12,15 +13,12 @@ class TestCase extends Orchestra
     {
         parent::setUp();
 
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Joinbiz\Data\Models\Common\\DataCommon\\Database\\Factories\\'.class_basename($modelName).'Factory'
-        );
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            JoinbizDataCommonServiceProvider::class,
+            DataCommonServiceProvider::class,
         ];
     }
 
