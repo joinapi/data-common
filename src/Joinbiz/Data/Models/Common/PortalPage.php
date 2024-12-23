@@ -3,11 +3,6 @@
 namespace Joinbiz\Data\Models\Common;
 
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD:src/Joinbiz/Data/Models/Common/PortalPage.php
-=======
-use Joinbiz\Data\Models\Content\Content;
-use Joinbiz\Data\Models\Security\SecurityGroup;
->>>>>>> 3b897f5a09638083e4d8b361917ff12b66bc372f:src/Models/PortalPage.php
 
 /**
  * @property string $portal_page_id
@@ -23,16 +18,15 @@ use Joinbiz\Data\Models\Security\SecurityGroup;
  * @property string $last_updated_tx_stamp
  * @property string $created_stamp
  * @property string $created_tx_stamp
+ * @property PortalPagePortlet[] $portalPagePortlets
+ * @property PortalPageColumn[] $portalPageColumns
  * @property PortalPage $portalPageByParentPortalPageId
  * @property SecurityGroup $securityGroupBySecurityGroupId
  * @property Content $contentByHelpContentId
- * @property PortalPageColumn[] $portalPageColumns
- * @property PortalPagePortlet[] $portalPagePortlets
  */
 class PortalPage extends Model
 {
     const CREATED_AT = 'created_stamp';
-
     const UPDATED_AT = 'last_updated_stamp';
 
     /**
@@ -69,6 +63,22 @@ class PortalPage extends Model
     protected $fillable = ['parent_portal_page_id', 'security_group_id', 'help_content_id', 'portal_page_name', 'description', 'owner_user_login_id', 'original_portal_page_id', 'sequence_num', 'last_updated_stamp', 'last_updated_tx_stamp', 'created_stamp', 'created_tx_stamp'];
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function portalPagePortlets()
+    {
+        return $this->hasMany('Joinbiz\Data\Models\Common\PortalPagePortlet', 'portal_page_id', 'portal_page_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function portalPageColumns()
+    {
+        return $this->hasMany('Joinbiz\Data\Models\Common\PortalPageColumn', 'portal_page_id', 'portal_page_id');
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function portalPageByParentPortalPageId()
@@ -89,22 +99,6 @@ class PortalPage extends Model
      */
     public function contentByHelpContentId()
     {
-        return $this->belongsTo('\Content', 'help_content_id', 'content_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function portalPageColumns()
-    {
-        return $this->hasMany('Joinbiz\Data\Models\Common\PortalPageColumn', 'portal_page_id', 'portal_page_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function portalPagePortlets()
-    {
-        return $this->hasMany('Joinbiz\Data\Models\Common\PortalPagePortlet', 'portal_page_id', 'portal_page_id');
+        return $this->belongsTo('Joinbiz\Data\Models\Content\Content', 'help_content_id', 'content_id');
     }
 }

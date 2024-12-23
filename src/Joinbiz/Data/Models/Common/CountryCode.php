@@ -13,13 +13,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $last_updated_tx_stamp
  * @property string $created_stamp
  * @property string $created_tx_stamp
- * @property CountryTeleCode $countryTeleCode
  * @property CountryCapital $countryCapital
+ * @property CountryTeleCode $countryTeleCode
  */
 class CountryCode extends Model
 {
     const CREATED_AT = 'created_stamp';
-
     const UPDATED_AT = 'last_updated_stamp';
 
     /**
@@ -58,16 +57,16 @@ class CountryCode extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function countryTeleCode()
+    public function countryCapital()
     {
-        return $this->hasOne('Joinbiz\Data\Models\Common\CountryTeleCode', 'country_code', 'country_code');
+        return $this->hasOne('Joinbiz\Data\Models\Common\CountryCapital', 'country_code', 'country_code');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function countryCapital()
+    public function countryTeleCode()
     {
-        return $this->hasOne('Joinbiz\Data\Models\Common\CountryCapital', 'country_code', 'country_code');
+        return $this->hasOne('Joinbiz\Data\Models\Common\CountryTeleCode', 'country_code', 'country_code');
     }
 }

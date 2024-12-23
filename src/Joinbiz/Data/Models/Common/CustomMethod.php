@@ -4,7 +4,6 @@ namespace Joinbiz\Data\Models\Common;
 
 use Illuminate\Database\Eloquent\Model;
 
-
 /**
  * @property string $custom_method_id
  * @property string $custom_method_type_id
@@ -14,53 +13,52 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $last_updated_tx_stamp
  * @property string $created_stamp
  * @property string $created_tx_stamp
- * @property ProductPrice[] $productPricesByCustomPriceCalcService
- * @property WorkEffort[] $workEffortsByEstimateCalcMethod
  * @property ProductPromoAction[] $productPromoActions
- * @property CustomMethodType $customMethodType
  * @property ProductPromoCond[] $productPromoConds
- * @property ProductStoreShipmentMeth[] $productStoreShipmentMethsByShipmentCustomMethodId
- * @property ProductStorePaymentSetting[] $productStorePaymentSettingsByPaymentCustomMethodId
- * @property FixedAssetDepMethod[] $fixedAssetDepMethodsByDepreciationCustomMethodId
- * @property CostComponentCalc[] $costComponentCalcsByCostCustomMethodId
+ * @property WorkEffort[] $workEffortsByEstimateCalcMethod
+ * @property CustomMethodType $customMethodType
  * @property PartyAcctgPreference[] $partyAcctgPreferencesByInvoiceSeqCustMethId
  * @property PartyAcctgPreference[] $partyAcctgPreferencesByOrderSeqCustMethId
  * @property PartyAcctgPreference[] $partyAcctgPreferencesByQuoteSeqCustMethId
+ * @property ProductStoreShipmentMeth[] $productStoreShipmentMethsByShipmentCustomMethodId
+ * @property ProductStorePaymentSetting[] $productStorePaymentSettingsByPaymentCustomMethodId
+ * @property ProductPrice[] $productPricesByCustomPriceCalcService
+ * @property CostComponentCalc[] $costComponentCalcsByCostCustomMethodId
+ * @property FixedAssetDepMethod[] $fixedAssetDepMethodsByDepreciationCustomMethodId
  * @property Content[] $contents
  * @property ProductAssoc[] $productAssocsByEstimateCalcMethod
- * @property UomConversion[] $uomConversions
  * @property UomConversionDated[] $uomConversionDateds
+ * @property UomConversion[] $uomConversions
  */
 class CustomMethod extends Model
 {
     const CREATED_AT = 'created_stamp';
-
     const UPDATED_AT = 'last_updated_stamp';
 
     /**
      * The table associated with the model.
-     *
+     * 
      * @var string
      */
     protected $table = 'custom_method';
 
     /**
      * The primary key for the model.
-     *
+     * 
      * @var string
      */
     protected $primaryKey = 'custom_method_id';
 
     /**
      * The "type" of the auto-incrementing ID.
-     *
+     * 
      * @var string
      */
     protected $keyType = 'string';
 
     /**
      * Indicates if the IDs are auto-incrementing.
-     *
+     * 
      * @var bool
      */
     public $incrementing = false;
@@ -73,33 +71,9 @@ class CustomMethod extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function productPricesByCustomPriceCalcService()
-    {
-        return $this->hasMany('Joinbiz\Data\Models\Product\ProductPrice', 'custom_price_calc_service', 'custom_method_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function workEffortsByEstimateCalcMethod()
-    {
-        return $this->hasMany('Joinbiz\Data\Models\Workeffort\WorkEffort', 'estimate_calc_method', 'custom_method_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
     public function productPromoActions()
     {
         return $this->hasMany('Joinbiz\Data\Models\Product\ProductPromoAction', 'custom_method_id', 'custom_method_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function customMethodType()
-    {
-        return $this->belongsTo('Joinbiz\Data\Models\Common\CustomMethodType', 'custom_method_type_id', 'custom_method_type_id');
     }
 
     /**
@@ -113,33 +87,17 @@ class CustomMethod extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function productStoreShipmentMethsByShipmentCustomMethodId()
+    public function workEffortsByEstimateCalcMethod()
     {
-        return $this->hasMany('Joinbiz\Data\Models\Product\ProductStoreShipmentMeth', 'shipment_custom_method_id', 'custom_method_id');
+        return $this->hasMany('Joinbiz\Data\Models\Workeffort\WorkEffort', 'estimate_calc_method', 'custom_method_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function productStorePaymentSettingsByPaymentCustomMethodId()
+    public function customMethodType()
     {
-        return $this->hasMany('Joinbiz\Data\Models\Product\ProductStorePaymentSetting', 'payment_custom_method_id', 'custom_method_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function fixedAssetDepMethodsByDepreciationCustomMethodId()
-    {
-        return $this->hasMany('Joinbiz\Data\Models\Accounting\FixedAssetDepMethod', 'depreciation_custom_method_id', 'custom_method_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function costComponentCalcsByCostCustomMethodId()
-    {
-        return $this->hasMany('Joinbiz\Data\Models\Product\CostComponentCalc', 'cost_custom_method_id', 'custom_method_id');
+        return $this->belongsTo('Joinbiz\Data\Models\Common\CustomMethodType', 'custom_method_type_id', 'custom_method_type_id');
     }
 
     /**
@@ -169,9 +127,49 @@ class CustomMethod extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
+    public function productStoreShipmentMethsByShipmentCustomMethodId()
+    {
+        return $this->hasMany('Joinbiz\Data\Models\Product\ProductStoreShipmentMeth', 'shipment_custom_method_id', 'custom_method_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function productStorePaymentSettingsByPaymentCustomMethodId()
+    {
+        return $this->hasMany('Joinbiz\Data\Models\Product\ProductStorePaymentSetting', 'payment_custom_method_id', 'custom_method_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function productPricesByCustomPriceCalcService()
+    {
+        return $this->hasMany('Joinbiz\Data\Models\Product\ProductPrice', 'custom_price_calc_service', 'custom_method_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function costComponentCalcsByCostCustomMethodId()
+    {
+        return $this->hasMany('Joinbiz\Data\Models\Product\CostComponentCalc', 'cost_custom_method_id', 'custom_method_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function fixedAssetDepMethodsByDepreciationCustomMethodId()
+    {
+        return $this->hasMany('Joinbiz\Data\Models\Accounting\FixedAssetDepMethod', 'depreciation_custom_method_id', 'custom_method_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function contents()
     {
-        return $this->hasMany('\Content', 'custom_method_id', 'custom_method_id');
+        return $this->hasMany('Joinbiz\Data\Models\Content\Content', 'custom_method_id', 'custom_method_id');
     }
 
     /**
@@ -185,16 +183,16 @@ class CustomMethod extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function uomConversions()
+    public function uomConversionDateds()
     {
-        return $this->hasMany('Joinbiz\Data\Models\Common\UomConversion', 'custom_method_id', 'custom_method_id');
+        return $this->hasMany('Joinbiz\Data\Models\Common\UomConversionDated', 'custom_method_id', 'custom_method_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function uomConversionDateds()
+    public function uomConversions()
     {
-        return $this->hasMany('Joinbiz\Data\Models\Common\UomConversionDated', 'custom_method_id', 'custom_method_id');
+        return $this->hasMany('Joinbiz\Data\Models\Common\UomConversion', 'custom_method_id', 'custom_method_id');
     }
 }

@@ -21,7 +21,6 @@ use Illuminate\Database\Eloquent\Model;
 class PortletAttribute extends Model
 {
     const CREATED_AT = 'created_stamp';
-
     const UPDATED_AT = 'last_updated_stamp';
 
     /**

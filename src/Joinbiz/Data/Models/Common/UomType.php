@@ -3,7 +3,6 @@
 namespace Joinbiz\Data\Models\Common;
 
 use Illuminate\Database\Eloquent\Model;
-use Joinbiz\Data\Models\Product\Product;
 
 /**
  * @property string $uom_type_id
@@ -15,13 +14,12 @@ use Joinbiz\Data\Models\Product\Product;
  * @property string $created_stamp
  * @property string $created_tx_stamp
  * @property Product[] $productsByAmountUomTypeId
- * @property Uom[] $uoms
  * @property UomType $uomTypeByParentTypeId
+ * @property Uom[] $uoms
  */
 class UomType extends Model
 {
     const CREATED_AT = 'created_stamp';
-
     const UPDATED_AT = 'last_updated_stamp';
 
     /**
@@ -66,18 +64,18 @@ class UomType extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function uoms()
-    {
-        return $this->hasMany('Joinbiz\Data\Models\Common\Uom', 'uom_type_id', 'uom_type_id');
-    }
-
-    /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function uomTypeByParentTypeId()
     {
         return $this->belongsTo('Joinbiz\Data\Models\Common\UomType', 'parent_type_id', 'uom_type_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function uoms()
+    {
+        return $this->hasMany('Joinbiz\Data\Models\Common\Uom', 'uom_type_id', 'uom_type_id');
     }
 }

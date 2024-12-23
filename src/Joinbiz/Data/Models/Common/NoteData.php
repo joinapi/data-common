@@ -17,21 +17,20 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $more_info_url
  * @property string $more_info_item_id
  * @property string $more_info_item_name
- * @property QuoteNote[] $quoteNotes
+ * @property CustRequestItemNote[] $custRequestItemNotes
  * @property CustRequestNote[] $custRequestNotes
+ * @property InvoiceNote[] $invoiceNotes
+ * @property MarketingCampaignNote[] $marketingCampaignNotes
+ * @property OrderHeaderNote[] $orderHeaderNotes
+ * @property PartyNote[] $partyNotes
  * @property WorkEffort[] $workEfforts
  * @property Party $partyByNoteParty
- * @property CustRequestItemNote[] $custRequestItemNotes
- * @property OrderHeaderNote[] $orderHeaderNotes
- * @property InvoiceNote[] $invoiceNotes
- * @property PartyNote[] $partyNotes
- * @property MarketingCampaignNote[] $marketingCampaignNotes
+ * @property QuoteNote[] $quoteNotes
  * @property WorkEffortNote[] $workEffortNotes
  */
 class NoteData extends Model
 {
     const CREATED_AT = 'created_stamp';
-
     const UPDATED_AT = 'last_updated_stamp';
 
     /**
@@ -70,9 +69,9 @@ class NoteData extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function quoteNotes()
+    public function custRequestItemNotes()
     {
-        return $this->hasMany('App\Joinbiz\Data\Models\Order\QuoteNote', 'note_id', 'note_id');
+        return $this->hasMany('Joinbiz\Data\Models\Order\CustRequestItemNote', 'note_id', 'note_id');
     }
 
     /**
@@ -80,7 +79,39 @@ class NoteData extends Model
      */
     public function custRequestNotes()
     {
-        return $this->hasMany('App\Joinbiz\Data\Models\Order\CustRequestNote', 'note_id', 'note_id');
+        return $this->hasMany('Joinbiz\Data\Models\Order\CustRequestNote', 'note_id', 'note_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function invoiceNotes()
+    {
+        return $this->hasMany('Joinbiz\Data\Models\Accounting\InvoiceNote', 'note_id', 'note_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function marketingCampaignNotes()
+    {
+        return $this->hasMany('Joinbiz\Data\Models\Marketing\MarketingCampaignNote', 'note_id', 'note_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function orderHeaderNotes()
+    {
+        return $this->hasMany('Joinbiz\Data\Models\Order\OrderHeaderNote', 'note_id', 'note_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function partyNotes()
+    {
+        return $this->hasMany('Joinbiz\Data\Models\Party\PartyNote', 'note_id', 'note_id');
     }
 
     /**
@@ -102,41 +133,9 @@ class NoteData extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function custRequestItemNotes()
+    public function quoteNotes()
     {
-        return $this->hasMany('App\Joinbiz\Data\Models\Order\CustRequestItemNote', 'note_id', 'note_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function orderHeaderNotes()
-    {
-        return $this->hasMany('App\Joinbiz\Data\Models\Order\OrderHeaderNote', 'note_id', 'note_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function invoiceNotes()
-    {
-        return $this->hasMany('Joinbiz\Data\Models\Accounting\InvoiceNote', 'note_id', 'note_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function partyNotes()
-    {
-        return $this->hasMany('Joinbiz\Data\Models\Party\PartyNote', 'note_id', 'note_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function marketingCampaignNotes()
-    {
-        return $this->hasMany('Joinbiz\Data\Models\Marketing\MarketingCampaignNote', 'note_id', 'note_id');
+        return $this->hasMany('Joinbiz\Data\Models\Order\QuoteNote', 'note_id', 'note_id');
     }
 
     /**

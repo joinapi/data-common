@@ -19,14 +19,13 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $last_updated_tx_stamp
  * @property string $created_stamp
  * @property string $created_tx_stamp
- * @property PortalPagePortlet[] $portalPagePortlets
  * @property PortletAttribute[] $portletAttributes
+ * @property PortalPagePortlet[] $portalPagePortlets
  * @property PortletPortletCategory[] $portletPortletCategories
  */
 class PortalPortlet extends Model
 {
     const CREATED_AT = 'created_stamp';
-
     const UPDATED_AT = 'last_updated_stamp';
 
     /**
@@ -65,17 +64,17 @@ class PortalPortlet extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function portalPagePortlets()
+    public function portletAttributes()
     {
-        return $this->hasMany('Joinbiz\Data\Models\Common\PortalPagePortlet', 'portal_portlet_id', 'portal_portlet_id');
+        return $this->hasMany('Joinbiz\Data\Models\Common\PortletAttribute', 'portal_portlet_id', 'portal_portlet_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function portletAttributes()
+    public function portalPagePortlets()
     {
-        return $this->hasMany('Joinbiz\Data\Models\Common\PortletAttribute', 'portal_portlet_id', 'portal_portlet_id');
+        return $this->hasMany('Joinbiz\Data\Models\Common\PortalPagePortlet', 'portal_portlet_id', 'portal_portlet_id');
     }
 
     /**

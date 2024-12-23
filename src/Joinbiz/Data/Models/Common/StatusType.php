@@ -19,7 +19,6 @@ use Illuminate\Database\Eloquent\Model;
 class StatusType extends Model
 {
     const CREATED_AT = 'created_stamp';
-
     const UPDATED_AT = 'last_updated_stamp';
 
     /**

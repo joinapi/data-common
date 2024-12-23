@@ -3,11 +3,6 @@
 namespace Joinbiz\Data\Models\Common;
 
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD:src/Joinbiz/Data/Models/Common/PeriodType.php
-=======
-use Joinbiz\Data\Models\Accounting\RateAmount;
-use Joinbiz\Data\Models\Humanres\PayHistory;
->>>>>>> 3b897f5a09638083e4d8b361917ff12b66bc372f:src/Models/PeriodType.php
 
 /**
  * @property string $period_type_id
@@ -18,15 +13,14 @@ use Joinbiz\Data\Models\Humanres\PayHistory;
  * @property string $last_updated_tx_stamp
  * @property string $created_stamp
  * @property string $created_tx_stamp
- * @property CustomTimePeriod[] $customTimePeriods
- * @property Uom $uom
  * @property PayHistory[] $payHistories
  * @property RateAmount[] $rateAmounts
+ * @property CustomTimePeriod[] $customTimePeriods
+ * @property Uom $uom
  */
 class PeriodType extends Model
 {
     const CREATED_AT = 'created_stamp';
-
     const UPDATED_AT = 'last_updated_stamp';
 
     /**
@@ -65,22 +59,6 @@ class PeriodType extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function customTimePeriods()
-    {
-        return $this->hasMany('Joinbiz\Data\Models\Common\CustomTimePeriod', 'period_type_id', 'period_type_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function uom()
-    {
-        return $this->belongsTo('Joinbiz\Data\Models\Common\Uom', 'uom_id', 'uom_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
     public function payHistories()
     {
         return $this->hasMany('Joinbiz\Data\Models\Humanres\PayHistory', 'period_type_id', 'period_type_id');
@@ -92,5 +70,21 @@ class PeriodType extends Model
     public function rateAmounts()
     {
         return $this->hasMany('Joinbiz\Data\Models\Accounting\RateAmount', 'period_type_id', 'period_type_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function customTimePeriods()
+    {
+        return $this->hasMany('Joinbiz\Data\Models\Common\CustomTimePeriod', 'period_type_id', 'period_type_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function uom()
+    {
+        return $this->belongsTo('Joinbiz\Data\Models\Common\Uom', 'uom_id', 'uom_id');
     }
 }

@@ -4,7 +4,6 @@ namespace Joinbiz\Data\Models\Common;
 
 use Illuminate\Database\Eloquent\Model;
 
-
 /**
  * @property string $data_source_id
  * @property string $data_source_type_id
@@ -13,46 +12,45 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $last_updated_tx_stamp
  * @property string $created_stamp
  * @property string $created_tx_stamp
- * @property ContentMetaData[] $contentMetaDatas
- * @property Party[] $parties
  * @property ContentAssoc[] $contentAssocs
- * @property PartyDataSource[] $partyDataSources
  * @property GeoPoint[] $geoPoints
- * @property Content[] $contents
- * @property DataResource[] $dataResources
- * @property DataSourceType $dataSourceType
  * @property DataResourceMetaData[] $dataResourceMetaDatas
+ * @property ContentMetaData[] $contentMetaDatas
+ * @property DataResource[] $dataResources
+ * @property PartyDataSource[] $partyDataSources
+ * @property Party[] $parties
+ * @property DataSourceType $dataSourceType
+ * @property Content[] $contents
  */
 class DataSource extends Model
 {
     const CREATED_AT = 'created_stamp';
-
     const UPDATED_AT = 'last_updated_stamp';
 
     /**
      * The table associated with the model.
-     *
+     * 
      * @var string
      */
     protected $table = 'data_source';
 
     /**
      * The primary key for the model.
-     *
+     * 
      * @var string
      */
     protected $primaryKey = 'data_source_id';
 
     /**
      * The "type" of the auto-incrementing ID.
-     *
+     * 
      * @var string
      */
     protected $keyType = 'string';
 
     /**
      * Indicates if the IDs are auto-incrementing.
-     *
+     * 
      * @var bool
      */
     public $incrementing = false;
@@ -65,33 +63,9 @@ class DataSource extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function contentMetaDatas()
-    {
-        return $this->hasMany('\ContentMetaData', 'data_source_id', 'data_source_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function parties()
-    {
-        return $this->hasMany('Joinbiz\Data\Models\Party\Party', 'data_source_id', 'data_source_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
     public function contentAssocs()
     {
-        return $this->hasMany('\ContentAssoc', 'data_source_id', 'data_source_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function partyDataSources()
-    {
-        return $this->hasMany('Joinbiz\Data\Models\Party\PartyDataSource', 'data_source_id', 'data_source_id');
+        return $this->hasMany('Joinbiz\Data\Models\Content\ContentAssoc', 'data_source_id', 'data_source_id');
     }
 
     /**
@@ -105,9 +79,17 @@ class DataSource extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function contents()
+    public function dataResourceMetaDatas()
     {
-        return $this->hasMany('\Content', 'data_source_id', 'data_source_id');
+        return $this->hasMany('Joinbiz\Data\Models\Content\DataResourceMetaData', 'data_source_id', 'data_source_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function contentMetaDatas()
+    {
+        return $this->hasMany('Joinbiz\Data\Models\Content\ContentMetaData', 'data_source_id', 'data_source_id');
     }
 
     /**
@@ -115,7 +97,23 @@ class DataSource extends Model
      */
     public function dataResources()
     {
-        return $this->hasMany('\DataResource', 'data_source_id', 'data_source_id');
+        return $this->hasMany('Joinbiz\Data\Models\Content\DataResource', 'data_source_id', 'data_source_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function partyDataSources()
+    {
+        return $this->hasMany('Joinbiz\Data\Models\Party\PartyDataSource', 'data_source_id', 'data_source_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function parties()
+    {
+        return $this->hasMany('Joinbiz\Data\Models\Party\Party', 'data_source_id', 'data_source_id');
     }
 
     /**
@@ -129,8 +127,8 @@ class DataSource extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function dataResourceMetaDatas()
+    public function contents()
     {
-        return $this->hasMany('\DataResourceMetaData', 'data_source_id', 'data_source_id');
+        return $this->hasMany('Joinbiz\Data\Models\Content\Content', 'data_source_id', 'data_source_id');
     }
 }
