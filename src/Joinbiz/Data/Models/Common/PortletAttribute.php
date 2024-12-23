@@ -21,11 +21,12 @@ use Illuminate\Database\Eloquent\Model;
 class PortletAttribute extends Model
 {
     const CREATED_AT = 'created_stamp';
+
     const UPDATED_AT = 'last_updated_stamp';
 
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'portlet_attribute';

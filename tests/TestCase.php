@@ -2,7 +2,6 @@
 
 namespace Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Joinbiz\Data\DataCommonServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 

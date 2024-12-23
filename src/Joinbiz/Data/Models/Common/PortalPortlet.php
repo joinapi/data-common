@@ -26,32 +26,33 @@ use Illuminate\Database\Eloquent\Model;
 class PortalPortlet extends Model
 {
     const CREATED_AT = 'created_stamp';
+
     const UPDATED_AT = 'last_updated_stamp';
 
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'portal_portlet';
 
     /**
      * The primary key for the model.
-     * 
+     *
      * @var string
      */
     protected $primaryKey = 'portal_portlet_id';
 
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'string';
 
     /**
      * Indicates if the IDs are auto-incrementing.
-     * 
+     *
      * @var bool
      */
     public $incrementing = false;
